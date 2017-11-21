@@ -1,0 +1,10 @@
+D:\Users\bliu54\Documents\dotnetcore\webapi\obj\Debug\netcoreapp2.0\webapi.csproj.CoreCompileInputs.cache
+D:\Users\bliu54\Documents\dotnetcore\webapi\obj\Debug\netcoreapp2.0\webapi.AssemblyInfoInputs.cache
+D:\Users\bliu54\Documents\dotnetcore\webapi\obj\Debug\netcoreapp2.0\webapi.AssemblyInfo.cs
+D:\Users\bliu54\Documents\dotnetcore\webapi\bin\Debug\netcoreapp2.0\webapi.deps.json
+D:\Users\bliu54\Documents\dotnetcore\webapi\bin\Debug\netcoreapp2.0\webapi.runtimeconfig.json
+D:\Users\bliu54\Documents\dotnetcore\webapi\bin\Debug\netcoreapp2.0\webapi.runtimeconfig.dev.json
+D:\Users\bliu54\Documents\dotnetcore\webapi\bin\Debug\netcoreapp2.0\webapi.dll
+D:\Users\bliu54\Documents\dotnetcore\webapi\bin\Debug\netcoreapp2.0\webapi.pdb
+D:\Users\bliu54\Documents\dotnetcore\webapi\obj\Debug\netcoreapp2.0\webapi.dll
+D:\Users\bliu54\Documents\dotnetcore\webapi\obj\Debug\netcoreapp2.0\webapi.pdb
