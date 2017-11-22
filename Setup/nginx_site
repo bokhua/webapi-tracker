@@ -12,6 +12,7 @@ server {
         proxy_pass              http://defaultbackend;
         proxy_redirect          off;
         proxy_http_version      1.1;
+        proxy_method            $reqeust_method;
         proxy_set_header 		Host 			    $host;
         proxy_set_header        Upgrade             $http_upgrade;
         proxy_set_header        User-Agent          $http_user_agent;
@@ -19,14 +20,15 @@ server {
         proxy_set_header		X-Real-Port 		$remote_port;
         proxy_set_header		X-Forwarded-For	    $proxy_add_x_forwarded_for;
         proxy_set_header        X-Forwarded-Proto   $scheme;
-        proxy_set_header        Access-Control-Request-Method $reqeust_method;
-        add_header        Access-Control-Allow-Origin https://xiaozhengyang.github.io always;
-        client_max_body_size 	10m;
-        client_body_buffer_size 128k;
         proxy_connect_timeout 	90;
         proxy_send_timeout 		90;
         proxy_read_timeout 		90;
         proxy_buffers			32 4k;
         proxy_cache_bypass      $http_upgrade;
+
+        client_max_body_size 	10m;
+        client_body_buffer_size 128k;
+
+        add_header        Access-Control-Allow-Origin https://xiaozhengyang.github.io always;
     }
 }
