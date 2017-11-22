@@ -30,5 +30,11 @@ server {
         client_body_buffer_size 128k;
 
         add_header        Access-Control-Allow-Origin https://xiaozhengyang.github.io always;
+
+        if($reqeust_method = OPTIONS) {
+            add_header Content-Length 0;
+            add_header Content-Type text/plain;
+            return 200;
+        }
     }
 }
