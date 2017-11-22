@@ -41,15 +41,20 @@ namespace webapi.Controllers
                 return BadRequest();
             }
 
-            item.RemoteAddress = HttpContext.Connection.RemoteIpAddress.ToString();
+            item.RemoteAddress = GetHeaderValue("X-Real-IP");
             item.RemotePort = HttpContext.Connection.RemotePort;
-            item.UserAgent = HttpContext.Request.Headers.ContainsKey("User-Agent") ? HttpContext.Request.Headers["User-Agent"].ToString() : "";
+            item.UserAgent = GetHeaderValue("User-Agent");
             item.Time = DateTime.Now;
 
             _context.ClientViews.Add(item);
             _context.SaveChanges();
 
             return CreatedAtRoute("GetClientView", new { id = item.Id }, item);
+        }
+
+        private string GetHeaderValue(string key)
+        {
+            return HttpContext.Request.Headers.ContainsKey(key) ? HttpContext.Request.Headers[key].ToString() : "";       
         }
     }
 }
