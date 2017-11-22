@@ -21,5 +21,6 @@ server {
         proxy_read_timeout 		90;
         proxy_buffers			32 4k;
         proxy_cache_bypass      $http_upgrade;
+        add_header              Access-Control-Allow-Origin https://xiaozhengyang.github.io;
     }
 }
