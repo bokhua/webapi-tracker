@@ -9,6 +9,15 @@ server {
     ssl_certificate_key     /etc/ssl/private/myssl.key;
     server_name             104.154.25.230;   
     location / {
+        
+        add_header        Access-Control-Allow-Origin https://xiaozhengyang.github.io always;
+
+        if($reqeust_method = OPTIONS) {
+            add_header Content-Length 0;
+            add_header Content-Type text/plain;
+            return 200;
+        }
+
         proxy_pass              http://defaultbackend;
         proxy_redirect          off;
         proxy_http_version      1.1;
@@ -28,13 +37,5 @@ server {
 
         client_max_body_size 	10m;
         client_body_buffer_size 128k;
-
-        add_header        Access-Control-Allow-Origin https://xiaozhengyang.github.io always;
-
-        if($reqeust_method = OPTIONS) {
-            add_header Content-Length 0;
-            add_header Content-Type text/plain;
-            return 200;
-        }
     }
 }
