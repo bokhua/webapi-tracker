@@ -10,10 +10,10 @@ server {
     server_name             104.154.25.230;   
     location / {
         
-        add_header          Access-Control-Allow-Origin * always;
-        add_header          Access-Control-Allow-Methods "GET, POST, PUT, DELETE";
-
+        add_header          Access-Control-Allow-Origin "*" always;
+    
         if ($request_method = OPTIONS ) {
+            add_header          Access-Control-Allow-Methods "GET, POST, PUT, DELETE";
             add_header Access-Control-Allow-Headers "origin, content-type, accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type";    
             add_header Content-Length 0;
             add_header Content-Type text/plain;
