@@ -1,0 +1,14 @@
+[Unit]
+Description=.NET Web API running on Linux
+
+[Service]
+WorkingDirectory=/var/aspnetcore/webapi
+ExecStart=/usr/bin/dotnet /var/aspnetcore/webapi/webapi.dll
+Restart=always
+RestartSec=10
+SyslogIndentifier=dotnet-webapi
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+
+[Install]
+WantedBy=multi-user.target
