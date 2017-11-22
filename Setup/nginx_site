@@ -9,10 +9,19 @@ server {
     ssl_certificate_key     /etc/ssl/private/myssl.key;
     server_name             104.154.25.230;   
     location / {
+    
+        if ($request_method = OPTIONS ) {
+            add_header          Access-Control-Allow-Origin "*" always;
+            add_header          Access-Control-Allow-Methods "GET, POST, PUT, DELETE";
+            add_header Access-Control-Allow-Headers "origin, content-type, accept,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type";    
+            add_header Content-Length 0;
+            add_header Content-Type text/plain;
+            return 200;
+        }
+        
         proxy_pass              http://defaultbackend;
         proxy_redirect 			off;
         proxy_set_header 		Host 			$host;
-        proxy_method            $reqeust_method;
         proxy_set_header		X-Real-IP 		$remote_addr;
         proxy_set_header		X-Forwarded-For	$proxy_add_x_forwarded_for;
         proxy_set_header        X-Forwarded-Proto $scheme;
