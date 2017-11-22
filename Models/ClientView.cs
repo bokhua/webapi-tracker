@@ -10,7 +10,7 @@ namespace webapi.Models
 
         public string RemoteAddress { get; set; }
 
-        public int RemotePort { get; set; }
+        public string RemotePort { get; set; }
 
         public string UserAgent { get; set; }
     }

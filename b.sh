@@ -7,7 +7,6 @@ sudo cp -rf /var/aspnetcore/webapi/data/* ./data
 dotnet restore 
 dotnet ef migrations add InitialCreate
 dotnet ef database update
-dotnet build
 dotnet publish
 
 sudo cp -rf ./Setup/nginx_site /etc/nginx/sites-available/default

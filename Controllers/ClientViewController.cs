@@ -42,7 +42,7 @@ namespace webapi.Controllers
             }
 
             item.RemoteAddress = GetHeaderValue("X-Real-IP");
-            item.RemotePort = HttpContext.Connection.RemotePort;
+            item.RemotePort = GetHeaderValue("X-Real-Port");
             item.UserAgent = GetHeaderValue("User-Agent");
             item.Time = DateTime.Now;
 
