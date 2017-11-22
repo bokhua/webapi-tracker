@@ -7,9 +7,7 @@ namespace webapi.Models
     {
         public DbSet<ClientView> ClientViews { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source=sqlite.db");
-        } 
+        public ClientViewContext(DbContextOptions<ClientViewContext> options) :base(options)
+        {}
     }
 }

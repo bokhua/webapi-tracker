@@ -9,7 +9,12 @@ namespace webapi.Controllers
     [Route("api/[controller]")]
     public class ClientViewController : Controller
     {
-        private readonly ClientViewContext _context = new ClientViewContext();
+        private ClientViewContext _context;
+
+        public ClientViewController(ClientViewContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
         public IEnumerable<ClientView> Get()
