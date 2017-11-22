@@ -7,9 +7,9 @@ server {
     ssl                     on;
     ssl_certificate         /etc/ssl/certs/myssl.crt;
     ssl_certificate_key     /etc/ssl/private/myssl.key;
-    server_name             104.154.25.230;   
+    server_name             104.154.25.230;
+    add_header              Access-Control-Allow-Origin "https://xiaozhengyang.github.io/";   
     location / {
-        add_header              Access-Control-Allow-Origin "https://xiaozhengyang.github.io/";
         proxy_pass              http://defaultbackend;
         proxy_redirect          off;
         proxy_http_version      1.1;
