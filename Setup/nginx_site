@@ -11,10 +11,10 @@ server {
     location / {
         
         add_header        Access-Control-Allow-Origin https://xiaozhengyang.github.io always;
-
+        add_header        Access-Control-Allow-Methods "GET, POST, PUT, DELETE";
         if($reqeust_method = OPTIONS) {
             add_header Content-Length 0;
-            add_header Content-Type text/plain;
+            add_header Content-Type "text/plain";
             return 200;
         }
 
