@@ -13,5 +13,7 @@ namespace webapi.Models
         public string RemotePort { get; set; }
 
         public string UserAgent { get; set; }
+
+        public string Data { get; set; }
     }
 }

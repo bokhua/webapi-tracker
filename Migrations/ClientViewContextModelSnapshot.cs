@@ -24,9 +24,11 @@ namespace webapi.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Data");
+
                     b.Property<string>("RemoteAddress");
 
-                    b.Property<int>("RemotePort");
+                    b.Property<string>("RemotePort");
 
                     b.Property<DateTime>("Time");
 

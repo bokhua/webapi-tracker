@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace webapi.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,8 +14,10 @@ namespace webapi.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Data = table.Column<string>(nullable: true),
                     RemoteAddress = table.Column<string>(nullable: true),
-                    RemotePort = table.Column<int>(nullable: false),
+                    RemotePort = table.Column<string>(nullable: true),
+                    Time = table.Column<DateTime>(nullable: false),
                     UserAgent = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

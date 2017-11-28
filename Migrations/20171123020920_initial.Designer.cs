@@ -4,14 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using webapi.Models;
 
 namespace webapi.Migrations
 {
     [DbContext(typeof(ClientViewContext))]
-    [Migration("20171121090713_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20171123020920_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,9 +25,13 @@ namespace webapi.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Data");
+
                     b.Property<string>("RemoteAddress");
 
-                    b.Property<int>("RemotePort");
+                    b.Property<string>("RemotePort");
+
+                    b.Property<DateTime>("Time");
 
                     b.Property<string>("UserAgent");
 

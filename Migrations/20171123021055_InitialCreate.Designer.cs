@@ -11,8 +11,8 @@ using webapi.Models;
 namespace webapi.Migrations
 {
     [DbContext(typeof(ClientViewContext))]
-    [Migration("20171121091011_ClientViewUpdate")]
-    partial class ClientViewUpdate
+    [Migration("20171123021055_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,9 +25,11 @@ namespace webapi.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Data");
+
                     b.Property<string>("RemoteAddress");
 
-                    b.Property<int>("RemotePort");
+                    b.Property<string>("RemotePort");
 
                     b.Property<DateTime>("Time");
 

@@ -34,17 +34,16 @@ namespace webapi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] ClientView item)
+        public IActionResult Create([FromBody] string content)
         {
-            if(item == null)
+            ClientView item = new ClientView
             {
-                return BadRequest();
-            }
-
-            item.RemoteAddress = GetHeaderValue("X-Real-IP");
-            item.RemotePort = GetHeaderValue("X-Real-Port");
-            item.UserAgent = GetHeaderValue("User-Agent");
-            item.Time = DateTime.Now;
+                RemoteAddress = GetHeaderValue("X-Real-IP"),
+                RemotePort = GetHeaderValue("X-Real-Port"),
+                UserAgent = GetHeaderValue("User-Agent"),
+                Time = DateTime.Now,
+                Data = content
+            };
 
             _context.ClientViews.Add(item);
             _context.SaveChanges();
